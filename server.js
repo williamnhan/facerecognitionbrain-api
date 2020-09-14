@@ -23,7 +23,7 @@ const port = process.env.PORT || 3001;
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get('/', (req, res) => { res.json(database.users) });
+app.get('/', (req, res) => { res.json("it's working") });
 
 app.post('/signin', signin.signinHandler(db, bcrypt));
 // app.post('/signin', signin.signinHandler(db, bcrypt)(req, res));
