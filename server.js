@@ -9,12 +9,9 @@ const profile = require('./controlllers/profile');
 const image = require('./controlllers/image');
 
 const db = knex({
-  client: 'pg',
-  connection: {
-    host: '127.0.0.1',
-    user: 'smart-brain',
-    password: '1234',
-    database: 'smart_brain'
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
   }
 })
 const app = express();
